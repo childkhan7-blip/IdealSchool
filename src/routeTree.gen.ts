@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AcademicExcellenceRouteImport } from './routes/academic-excellence'
 import { Route as LabsRouteImport } from './routes/labs'
 import { Route as LibraryRouteImport } from './routes/library'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicExcellenceRoute = AcademicExcellenceRouteImport.update({
+  id: '/academic-excellence',
+  path: '/academic-excellence',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LabsRoute = LabsRouteImport.update({
@@ -31,30 +37,34 @@ const LibraryRoute = LibraryRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/academic-excellence': typeof AcademicExcellenceRoute
   '/labs': typeof LabsRoute
   '/library': typeof LibraryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/academic-excellence': typeof AcademicExcellenceRoute
   '/labs': typeof LabsRoute
   '/library': typeof LibraryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/academic-excellence': typeof AcademicExcellenceRoute
   '/labs': typeof LabsRoute
   '/library': typeof LibraryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/labs' | '/library'
+  fullPaths: '/' | '/academic-excellence' | '/labs' | '/library'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/labs' | '/library'
-  id: '__root__' | '/' | '/labs' | '/library'
+  to: '/' | '/academic-excellence' | '/labs' | '/library'
+  id: '__root__' | '/' | '/academic-excellence' | '/labs' | '/library'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcademicExcellenceRoute: typeof AcademicExcellenceRoute
   LabsRoute: typeof LabsRoute
   LibraryRoute: typeof LibraryRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academic-excellence': {
+      id: '/academic-excellence'
+      path: '/academic-excellence'
+      fullPath: '/academic-excellence'
+      preLoaderRoute: typeof AcademicExcellenceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/labs': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcademicExcellenceRoute: AcademicExcellenceRoute,
   LabsRoute: LabsRoute,
   LibraryRoute: LibraryRoute,
 }

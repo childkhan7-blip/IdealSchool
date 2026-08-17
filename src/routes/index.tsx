@@ -133,6 +133,7 @@ const FACILITIES = [
     icon: GraduationCap,
     title: "Academic Excellence",
     text: "A rigorous curriculum, continuous assessment and small-group mentoring that keeps every learner progressing.",
+    to: "/academic-excellence" as const,
   },
   {
     icon: FlaskConical,
@@ -475,7 +476,11 @@ function Facilities() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
                 {"to" in f && f.to ? (
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold">
-                    {f.title === "Library" ? "Explore our library" : "Explore our labs"}
+                    {f.title === "Library"
+                      ? "Explore our library"
+                      : f.title === "Academic Excellence"
+                        ? "Explore academic excellence"
+                        : "Explore our labs"}
                     <ArrowRight className="size-4" aria-hidden />
                   </span>
                 ) : null}
