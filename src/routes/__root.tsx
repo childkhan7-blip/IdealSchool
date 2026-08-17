@@ -77,16 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ideal Grammar School" },
+      { title: "Ideal Grammar High School & English Language" },
       {
         name: "description",
-        content: "Ideal Grammar School — academic excellence, discipline and care.",
+        content: "Ideal Grammar High School & English Language, Quetta — academic excellence, discipline and care.",
       },
-      { name: "author", content: "Ideal Grammar School" },
-      { property: "og:title", content: "Ideal Grammar School" },
+      { name: "author", content: "Ideal Grammar High School & English Language" },
+      { property: "og:title", content: "Ideal Grammar High School & English Language" },
       {
         property: "og:description",
-        content: "Ideal Grammar School — academic excellence, discipline and care.",
+        content: "Ideal Grammar High School & English Language, Quetta — academic excellence, discipline and care.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

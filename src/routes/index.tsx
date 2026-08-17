@@ -26,13 +26,13 @@ import zhoibImg from "@/assets/teacher-zhoib.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ideal Grammar School | Excellence, Discipline & Care" },
+      { title: "Ideal Grammar High School & English Language | Quetta" },
       {
         name: "description",
         content:
-          "Ideal Grammar School: meet our principal and faculty, view our 45-minute period schedule, facilities, and contact details.",
+          "Ideal Grammar High School & English Language, Quetta: meet our principal and faculty, view our 45-minute period schedule, facilities, and contact details.",
       },
-      { property: "og:title", content: "Ideal Grammar School" },
+      { property: "og:title", content: "Ideal Grammar High School & English Language" },
       {
         property: "og:description",
         content:
@@ -164,12 +164,12 @@ const EXPLORE_LABELS: Record<string, string> = {
 };
 
 const CONTACT = {
-  address: "24 Grammar Avenue, Model Town, Lahore",
+  address: "Ideal Grammar High School & English Language, Quetta",
   email: "info@idealgrammarschool.edu",
   phone: "+92 300 1234567",
   hours: "Mon – Sat, 7:30 AM – 3:00 PM",
   mapEmbed:
-    "https://www.google.com/maps?q=Model+Town+Lahore&output=embed",
+    "https://www.google.com/maps?q=Ideal+Grammar+High+School+%26+English+Language+Quetta&output=embed",
 };
 
 /* -------------------------------------------------------------- */
@@ -184,7 +184,7 @@ function Navbar() {
             <BookOpen className="size-5 text-gold" aria-hidden />
           </span>
           <span className="font-display text-base leading-tight font-semibold text-primary sm:text-lg">
-            Ideal Grammar School
+            Ideal Grammar High School
           </span>
         </a>
 
@@ -286,7 +286,7 @@ function Hero() {
             Principal's Spotlight
           </span>
           <h1 className="mt-5 text-4xl leading-[1.05] font-bold text-primary sm:text-5xl lg:text-6xl">
-            Principal Name
+            Basheer Ahmed
           </h1>
           <p className="text-gradient-gold mt-3 text-xl font-semibold sm:text-2xl">
             Principal's Welcome Message
@@ -643,10 +643,11 @@ function Footer() {
             <span className="grid size-10 place-items-center rounded-xl bg-primary-foreground/10">
               <BookOpen className="size-5 text-gold" aria-hidden />
             </span>
-            <span className="font-display text-lg font-semibold">Ideal Grammar School</span>
+            <span className="font-display text-lg font-semibold">Ideal Grammar High School</span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
-            Nurturing academic excellence, discipline and character since 1998.
+            Ideal Grammar High School & English Language — nurturing academic excellence,
+            discipline and character in Quetta.
           </p>
         </div>
 
@@ -691,7 +692,7 @@ function Footer() {
             </li>
             <li>
               <a href="#" className="transition-colors hover:text-gold">
-                YouTube — Ideal Grammar School
+                YouTube — Ideal Grammar High School
               </a>
             </li>
           </ul>
@@ -699,7 +700,7 @@ function Footer() {
       </div>
       <div className="border-t border-primary-foreground/10 px-5 py-6">
         <p className="mx-auto max-w-7xl text-center text-xs text-primary-foreground/60">
-          © {new Date().getFullYear()} Ideal Grammar School. All rights reserved.
+          © {new Date().getFullYear()} Ideal Grammar High School & English Language. All rights reserved.
         </p>
       </div>
     </footer>
