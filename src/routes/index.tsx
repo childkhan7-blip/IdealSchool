@@ -152,8 +152,16 @@ const FACILITIES = [
     icon: Trophy,
     title: "Sports & Extra-Curriculars",
     text: "Cricket, football, athletics, debate, art and robotics clubs building teamwork and character.",
+    to: "/sports-extra-curriculars" as const,
   },
 ];
+
+const EXPLORE_LABELS: Record<string, string> = {
+  "Academic Excellence": "Explore academic excellence",
+  "Computer & Science Labs": "Explore our labs",
+  Library: "Explore our library",
+  "Sports & Extra-Curriculars": "Explore sports & activities",
+};
 
 const CONTACT = {
   address: "24 Grammar Avenue, Model Town, Lahore",
@@ -474,20 +482,14 @@ function Facilities() {
                 </span>
                 <h3 className="text-lg font-semibold text-primary">{f.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
-                {"to" in f && f.to ? (
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold">
-                    {f.title === "Library"
-                      ? "Explore our library"
-                      : f.title === "Academic Excellence"
-                        ? "Explore academic excellence"
-                        : "Explore our labs"}
-                    <ArrowRight className="size-4" aria-hidden />
-                  </span>
-                ) : null}
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold">
+                  {EXPLORE_LABELS[f.title]}
+                  <ArrowRight className="size-4" aria-hidden />
+                </span>
               </>
             );
 
-            return "to" in f && f.to ? (
+            return (
               <Link
                 key={f.title}
                 to={f.to}
@@ -495,10 +497,6 @@ function Facilities() {
               >
                 {body}
               </Link>
-            ) : (
-              <article key={f.title} className="surface-3d rounded-3xl p-7">
-                {body}
-              </article>
             );
           })}
         </div>

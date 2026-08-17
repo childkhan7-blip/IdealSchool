@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AcademicExcellenceRouteImport } from './routes/academic-excellence'
 import { Route as LabsRouteImport } from './routes/labs'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as SportsExtraCurricularsRouteImport } from './routes/sports-extra-curriculars'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const LibraryRoute = LibraryRouteImport.update({
   path: '/library',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SportsExtraCurricularsRoute = SportsExtraCurricularsRouteImport.update({
+  id: '/sports-extra-curriculars',
+  path: '/sports-extra-curriculars',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/academic-excellence': typeof AcademicExcellenceRoute
   '/labs': typeof LabsRoute
   '/library': typeof LibraryRoute
+  '/sports-extra-curriculars': typeof SportsExtraCurricularsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/academic-excellence': typeof AcademicExcellenceRoute
   '/labs': typeof LabsRoute
   '/library': typeof LibraryRoute
+  '/sports-extra-curriculars': typeof SportsExtraCurricularsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,30 @@ export interface FileRoutesById {
   '/academic-excellence': typeof AcademicExcellenceRoute
   '/labs': typeof LabsRoute
   '/library': typeof LibraryRoute
+  '/sports-extra-curriculars': typeof SportsExtraCurricularsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/academic-excellence' | '/labs' | '/library'
+  fullPaths:
+    | '/'
+    | '/academic-excellence'
+    | '/labs'
+    | '/library'
+    | '/sports-extra-curriculars'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/academic-excellence' | '/labs' | '/library'
-  id: '__root__' | '/' | '/academic-excellence' | '/labs' | '/library'
+  to:
+    | '/'
+    | '/academic-excellence'
+    | '/labs'
+    | '/library'
+    | '/sports-extra-curriculars'
+  id:
+    | '__root__'
+    | '/'
+    | '/academic-excellence'
+    | '/labs'
+    | '/library'
+    | '/sports-extra-curriculars'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +92,7 @@ export interface RootRouteChildren {
   AcademicExcellenceRoute: typeof AcademicExcellenceRoute
   LabsRoute: typeof LabsRoute
   LibraryRoute: typeof LibraryRoute
+  SportsExtraCurricularsRoute: typeof SportsExtraCurricularsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sports-extra-curriculars': {
+      id: '/sports-extra-curriculars'
+      path: '/sports-extra-curriculars'
+      fullPath: '/sports-extra-curriculars'
+      preLoaderRoute: typeof SportsExtraCurricularsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicExcellenceRoute: AcademicExcellenceRoute,
   LabsRoute: LabsRoute,
   LibraryRoute: LibraryRoute,
+  SportsExtraCurricularsRoute: SportsExtraCurricularsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
