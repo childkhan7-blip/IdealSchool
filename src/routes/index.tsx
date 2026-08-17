@@ -145,6 +145,7 @@ const FACILITIES = [
     icon: Library,
     title: "Library",
     text: "Over 12,000 titles, quiet study bays and a digital catalogue open through the school day.",
+    to: "/library" as const,
   },
   {
     icon: Trophy,
@@ -474,7 +475,7 @@ function Facilities() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
                 {"to" in f && f.to ? (
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold">
-                    Explore our labs
+                    {f.title === "Library" ? "Explore our library" : "Explore our labs"}
                     <ArrowRight className="size-4" aria-hidden />
                   </span>
                 ) : null}

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, BookOpen, Clock, Laptop, Users } from "lucide-react";
+import { ArrowLeft, BookOpen, Clock, Laptop, Users, Award, Sparkles } from "lucide-react";
 import libraryImage from "@/assets/library.png";
 
 export const Route = createFileRoute("/library")({
@@ -69,7 +69,7 @@ function LibraryPage() {
         <div className="mt-8 grid items-center gap-8 lg:grid-cols-2">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-gold uppercase">
-              About &amp; Facilities
+              About & Facilities
             </p>
             <h1 className="mt-3 text-3xl font-bold text-primary sm:text-4xl">
               The Ideal Grammar School Library
@@ -99,6 +99,52 @@ function LibraryPage() {
               Our main reading hall, home to over 12,000 catalogued titles.
             </figcaption>
           </figure>
+        </div>
+
+        <div className="mt-10 grid items-center gap-8 lg:grid-cols-2">
+          <figure className="surface-3d overflow-hidden rounded-3xl p-2">
+            <img
+              src={libraryImage}
+              alt="The Ideal Grammar School library — one of the best school libraries in the region"
+              loading="lazy"
+              className="h-64 w-full rounded-2xl object-cover sm:h-80 lg:h-[24rem]"
+            />
+            <figcaption className="px-3 py-3 text-center text-xs text-muted-foreground">
+              One of the best libraries in Ideal Grammar School — a haven for young readers.
+            </figcaption>
+          </figure>
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold-soft/30 px-4 py-1.5 text-xs font-semibold tracking-widest text-primary uppercase">
+              <Award className="size-4 text-gold" aria-hidden />
+              One of the Best Libraries
+            </span>
+            <h2 className="mt-4 text-2xl font-bold text-primary sm:text-3xl">
+              A World of Knowledge Under One Roof
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              The Ideal Grammar School library is proudly one of the best libraries in the school —
+              a bright, welcoming space where curiosity comes alive. With over 12,000 carefully
+              selected titles spanning fiction, classics, Urdu and English literature, Islamic
+              studies, science, history and career guidance, there is truly something for every
+              reader.
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Our library is more than just a collection of books — it is a sanctuary for learning.
+              Students gather here during recess, after class and during their weekly library
+              periods to explore, discover and grow. The calm atmosphere, comfortable reading bays
+              and dedicated librarian make it the perfect place to develop a lifelong love of
+              reading.
+            </p>
+            <div className="mt-6 flex items-start gap-3 rounded-2xl border border-dashed border-gold bg-gold-soft/30 px-5 py-4">
+              <Sparkles className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden />
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <span className="font-semibold text-primary">Why students love it: </span>
+                From picture books for our youngest learners to advanced reference works for board
+                and college preparation, the library grows with every student — nurturing readers
+                who become confident, lifelong learners.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
