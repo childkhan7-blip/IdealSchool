@@ -276,7 +276,6 @@ function Hero() {
             />
           </div>
           <div className="surface-navy absolute -bottom-5 left-6 rounded-2xl px-5 py-3">
-            <p className="text-xs tracking-widest text-gold uppercase">Est. 1998</p>
             <p className="text-sm font-semibold">Excellence & Discipline</p>
           </div>
         </div>
