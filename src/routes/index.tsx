@@ -718,6 +718,9 @@ function Index() {
         <Contact />
       </main>
       <Footer />
+      <p className="fixed right-4 bottom-4 z-50 text-[10px] font-medium tracking-wide text-muted-foreground/50 select-none">
+        Made by Abdul-Rehman
+      </p>
     </div>
   );
 }
